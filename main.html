@@ -1,0 +1,244 @@
+<html>
+  <head>
+    <title>Quiz Application</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+        background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+      }
+
+      form {
+        width: 500px;
+        margin: 0 auto;
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        width: 200px;
+        height: 50px;
+        border-radius: 30px;
+        background-color: #603f83ff;
+        color: #c7d3d4ff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      button:hover {
+        background-color: #c7d3d4ff;
+        color: #603f83ff;
+      }
+      p {
+        font-size: 20px;
+        text-align: center;
+      }
+      .bg {
+        background-color: #c7d3d4ff;
+        color: #603f83ff;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      h2 {
+        background-color: #603f83ff;
+        color: #c7d3d4ff;
+        padding: 30px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      label {
+        font-size: 18px;
+        margin-left: 30px;
+      }
+      .score {
+        margin-left: 85%;
+        width: 200px;
+        transform: translate(0%, -30%);
+      }
+      .score p {
+        font-size: 30px;
+      }
+      .score-head {
+        background-color: #603f83ff;
+        color: white;
+        text-align: center;
+      }
+      .h11 {
+        transform: translate(0%, 100%);
+        font-size: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="h11">QUIZ APPLICATION</h1>
+    <div class="score">
+      <div class="score-head"><h1>Score</h1></div>
+      <p id="scores"></p>
+    </div>
+
+    <form id="quiz-form">
+      <div class="que">
+        <h2>Question 1</h2>
+        <div class="bg">
+          <p>HTML stands for ?</p>
+          <label
+            ><input type="radio" name="question-1" value="incorrect" />HighText
+            Machine Language</label
+          ><br />
+          <label
+            ><input type="radio" name="question-1" value="incorrect" />HyperText
+            and links Markup Language</label
+          ><br />
+          <label
+            ><input type="radio" name="question-1" value="correct" />HyperText
+            Markup Language</label
+          ><br />
+          <label
+            ><input type="radio" name="question-1" value="incorrect" />None of
+            these</label
+          >
+        </div>
+      </div>
+      <br />
+
+      <div class="que">
+        <h2>Question 2</h2>
+        <div class="bg">
+          <p>Who is the father of HTML?</p>
+          <label
+            ><input type="radio" name="question-2" value="incorrect" />Rasmus
+            Lerdorf</label
+          ><br />
+          <label
+            ><input type="radio" name="question-2" value="correct" />Tim
+            Berners-Lee</label
+          ><br />
+          <label
+            ><input type="radio" name="question-2" value="incorrect" />Brendan
+            Eich</label
+          ><br />
+          <label
+            ><input type="radio" name="question-2" value="incorrect" />Sergey
+            Brin</label
+          >
+        </div>
+      </div>
+      <br />
+
+      <div class="que">
+        <h2>Question 3</h2>
+        <div class="bg">
+          <p>Which of the following is not a HTML5 tag?</p>
+          <label
+            ><input
+              type="radio"
+              name="question-3"
+              value="correct"
+            />track</label
+          ><br />
+          <label
+            ><input
+              type="radio"
+              name="question-3"
+              value="incorrect"
+            />video</label
+          ><br />
+          <label
+            ><input
+              type="radio"
+              name="question-3"
+              value="incorrect"
+            />slider</label
+          ><br />
+          <label
+            ><input type="radio" name="question-3" value="incorrect" />source
+          </label>
+        </div>
+      </div>
+      <br />
+
+      <div class="que">
+        <h2>Question 4</h2>
+        <div class="bg">
+          <p>Which attribute is not essential under "iframe" tag?</p>
+          <label
+            ><input
+              type="radio"
+              name="question-4"
+              value="correct"
+            />frameborder</label
+          ><br />
+          <label
+            ><input type="radio" name="question-4" value="incorrect" />
+            width</label
+          ><br />
+          <label
+            ><input
+              type="radio"
+              name="question-4"
+              value="incorrect"
+            />height</label
+          ><br />
+          <label
+            ><input type="radio" name="question-4" value="incorrect" />
+            src</label
+          >
+        </div>
+      </div>
+      <br />
+
+      <div class="que">
+        <h2>Question 5</h2>
+        <div class="bg">
+          <p>
+            In HTML, which attribute is used to create a link that opens in a
+            new window tab?
+          </p>
+          <label
+            ><input
+              type="radio"
+              name="question-5"
+              value="incorrect"
+            />src=”_blank”</label
+          ><br />
+          <label
+            ><input
+              type="radio"
+              name="question-5"
+              value="incorrect"
+            />alt=”_blank”</label
+          ><br />
+          <label
+            ><input
+              type="radio"
+              name="question-5"
+              value="incorrect"
+            />target=”_self”</label
+          ><br />
+          <label
+            ><input type="radio" name="question-5" value="correct" />
+            target=”_blank”</label
+          >
+        </div>
+      </div>
+    </form>
+    <button onclick="ques()">Submit</button>
+
+    <script>
+      function ques(k) {
+        const form = document.getElementById("quiz-form");
+        const answers = form.elements;
+        let score = 0;
+        for (let i = 0; i < answers.length; i++) {
+          if (answers[i].checked && answers[i].value === "correct") {
+            score++;
+          }
+        }
+
+        document.getElementById("scores").innerHTML = score;
+      }
+      let score = 0;
+      document.getElementById("scores").innerHTML = score;
+    </script>
+  </body>
+</html>
